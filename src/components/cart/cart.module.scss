@@ -1,0 +1,147 @@
+$border-color: #dee2e6;
+
+%main-display {
+    display: flex;
+    justify-content: space-between;
+}
+
+%primary-caption {
+    padding: 0 10px 5px 15px;
+
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+
+    color: #202435;
+
+    @media (max-width: 1150px) {
+        font-size: 20px;
+    }
+
+    @media (max-width: 980px) {
+        font-size: 16px;
+    }
+
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
+}
+
+.checkout {
+    @extend %main-display;
+
+    max-width: 85%;
+    min-height: 220px;
+
+    margin: 50px auto 0 auto;  
+    
+    @media (max-width: 700px) {
+        margin: 80px auto 0 auto;
+    }
+}
+
+.cart {
+    width: 70%;
+
+    .cartCaption {
+        @extend %primary-caption;
+    }
+
+    .submitPay {
+        width: 32%;
+        height: 40px;
+
+        margin: 35px 0 35px 0;
+
+        background-color: #ed174a;
+        color: white;
+
+        border: 0;
+        border-radius: 5px;
+
+        font-size: 16px;
+
+        cursor: pointer;
+
+        @media (max-width: 1150px) {
+            width: 25%;
+            height: 35px;
+
+            font-size: 14px;
+        }
+
+        @media (max-width: 980px) {
+            height: 30px;
+
+            font-size: 10px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 8px;
+        }
+    }
+}
+
+.totals {
+    width: 23%;
+    padding: 12px;
+
+    text-align: start;
+    
+    border: 1px solid $border-color;
+    border-radius: 5px;
+
+    .totalPrice {
+        @extend %primary-caption;
+    }
+
+    .totalItems {
+        font-size: 17px;
+        font-weight: 400;
+
+        @media (max-width: 1150px) {
+            font-size: 15px;
+        }
+    
+        @media (max-width: 980px) {
+            font-size: 13px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 10px;
+        }
+    }
+}
+
+.itemOfCart {
+    @extend %main-display;
+    
+    height: 95px;
+
+    margin-right: 2px;
+
+    align-items: center;
+
+    .caption {
+        font-weight: 500;
+        font-size: 16px;
+    
+        @media (max-width: 1150px) {
+            font-size: 14px;
+        }
+    
+        @media (max-width: 700px) {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        @media (max-width: 500px) {
+            font-size: 11px;
+            margin-right: 7px;
+        }
+    }
+}   
+
+.border {
+    border-bottom: 1px solid $border-color;
+}

@@ -1,0 +1,39 @@
+.categories {
+    display: flex;
+    justify-content: flex-end;
+
+    max-width: 80%;
+    max-height: 50px;
+
+    margin: 20px auto 20px auto;  
+
+    a {
+        text-decoration: none;
+
+        .caption {
+            margin-right: 30px;
+
+            font-size: 24px;
+            font-weight: 500;
+
+            color: #202435;
+
+            @media (max-width: 1150px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 700px) {
+                font-size: 18px;
+            }
+        }
+
+        .active {
+            color: #2bbef9;
+        }
+    }
+
+    @media (max-width: 700px) {  
+        margin: 70px auto 20px auto
+    }
+    
+}

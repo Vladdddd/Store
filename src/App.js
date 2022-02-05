@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from 'react';
+import s from './app.module.scss';
+import { Provider } from 'react-redux';
+import store from './redux/redux-store';
+import NavContainer from './components/nav/NavContainer';
+import { Route, Routes } from 'react-router-dom';
+
+const SectionContainer = lazy(() => import('./components/main/SectionContainer'));
+const CartContainer = lazy(() => import('./components/cart/CartContainer'));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={s.app}>
+            <NavContainer />
+            <Suspense fallback={<div>Loading...</div>}>
+                <Routes>
+                    <Route path="/*" element={<SectionContainer/>} />
+                    <Route path="/cart/*" element={<CartContainer/>} />
+                </Routes>
+            </Suspense>
+        </div>
+    );
 }
 
-export default App;
+const AppContainer = (props) => {
+    return <Provider store={store}>
+        <App />
+    </Provider>
+}
+
+export default AppContainer;
