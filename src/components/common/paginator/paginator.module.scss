@@ -1,10 +1,60 @@
-.selectedPage{
-    font-weight: bold;
+@mixin border($color) {
+    border: 1px solid $color;
+    border-radius: 5px;
 }
 
 .usersPaginator {
-    span {
-        margin-right: 5px;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 25px;
+
+    .selectPagesButton {
+        margin-left: 10px;
+        margin-right: 10px;
+
+        background-color: white;
+
+        @include border(#2bbef9);
     }
-    
+
+    .pageBox {
+        box-sizing: border-box;
+
+        width: 33px;
+        height: 33px;
+
+        margin-right: 5px;
+
+        background-color: white;
+
+        @include border(#e3e3e3);
+
+        .pageNumber {
+            line-height: 30px;
+            font-size: 18px;
+
+            @media (max-width: 700px) {
+                font-size: 14px;
+                line-height: 22px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    .pageBox:hover {
+        @include border(#2bbef9);
+    }
+}
+
+.selectedPage{
+    background-color: #2bbef9 !important;
+    color: white;
+
+    border: 0px solid #2bbef9 !important;
+    font-weight: 500;
 }

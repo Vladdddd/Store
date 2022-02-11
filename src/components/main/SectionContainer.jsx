@@ -12,7 +12,6 @@ class SectionContainer extends React.Component {
 
     componentDidMount() {
         this.props.setLocation();
-        
     }
 
     onPageChanged = (pageNumber) => {

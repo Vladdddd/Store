@@ -23,6 +23,7 @@ class CartContainer extends React.Component {
 
     render() {
         if(this.props.cartProducts.length !== this.props.wantedItems.length) {
+            //console.log(this.props.cartProducts.length, this.props.wantedItems.length);
             return <div>loading...</div>
         }
         return <>

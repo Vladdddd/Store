@@ -8,7 +8,7 @@ const ItemOfProducts = ({productItem, index, onAddInCart, currentPage, storageCh
     return (
         <div className={s.productItem + ' ' + firstBorder + ' ' + secondBorder}>
             <div>
-                <img src="" alt="" className={s.productImg}/>
+                <img src={productItem.url} alt="" className={s.productImg}/>
             </div>
             
             <div className={s.description}>

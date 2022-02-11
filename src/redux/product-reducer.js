@@ -79,10 +79,13 @@ const productReducer = (state = initialState, action) => {
         case SET_ALL_TOTAL_PRICE:
             let allTotalPrice = 0;
             for (let key in localStorage) {
-                if (!localStorage.hasOwnProperty(key) || key === 'city') {
+                if (!localStorage.hasOwnProperty(key)) {
                     continue;
                 }
-                allTotalPrice += Number(localStorage.getItem(key));
+
+                if( Number.isInteger( Number(localStorage.getItem(key)) ) ) {
+                    allTotalPrice += Number(localStorage.getItem(key));
+                }   
             }
 
             return {

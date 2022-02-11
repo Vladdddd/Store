@@ -15,11 +15,15 @@ const cartReducer = (state = initialState, action) => {
             let items = [];
             let i = 0;
             for (let key in localStorage) {
-                if (!localStorage.hasOwnProperty(key) || key === 'city') {
+                if (!localStorage.hasOwnProperty(key)) {
                     continue;
                 }
-                items[i] = key;
-                i++;
+
+                if( Number.isInteger( Number(localStorage.getItem(key)) ) ) {
+                    items[i] = key;
+                    i++;
+                }                   
+                
             }
             
             return {

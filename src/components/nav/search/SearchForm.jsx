@@ -21,7 +21,7 @@ const SearchForm = ({onSectionChanged, getSearchedProducts, ...props}) => {
 
     return (
         <div className={s.searchForm}>
-            <input className={s.input} onChange={onNameChange} type="text" placeholder="Search for products..." value={searchedProductName}/>
+            <input onChange={onNameChange} type="search" placeholder="Search for products..." value={searchedProductName}/>
             <NavLink to="/searched"><button onClick={() => {onSubmit()}}><img src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-search-strong-256.png" alt=""/></button></NavLink>
         </div>
     )
