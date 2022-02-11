@@ -16,6 +16,7 @@ const Nav = ({ totalPrice, locations, location, onLocationChange, searchedProduc
                     <img className={s.logoIcon} src={market} alt="" />
                     <span className={s.border}></span>
                     <h2 className={s.name}>Online Food</h2>
+                    <h2 className={s.secondName}>O Food</h2>
                 </div></NavLink>
 
                 <div className={s.locationPanel}>
