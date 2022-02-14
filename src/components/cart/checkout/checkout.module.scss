@@ -83,6 +83,8 @@ $block-padding: 20px 20px 25px 30px;
     margin-right: 3%;
     padding: $block-padding;
 
+    background-color: white;
+
     @include border(#f3f4f7);
 
     .caption {
@@ -171,6 +173,8 @@ $block-padding: 20px 20px 25px 30px;
 
     padding: $block-padding;
     text-align: start;
+
+    background-color: white;
 
     @include border(#233a95);
 
