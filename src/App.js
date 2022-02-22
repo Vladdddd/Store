@@ -4,18 +4,23 @@ import { Provider } from 'react-redux';
 import store from './redux/redux-store';
 import NavContainer from './components/nav/NavContainer';
 import { Route, Routes } from 'react-router-dom';
+import CartPreloader from './components/common/preloaders/Cart/CartPreloader';
+import { useLocation } from "react-router-dom";
+import Preloader from './components/common/preloaders/Preloader';
 
 const SectionContainer = lazy(() => import('./components/main/SectionContainer'));
 const CartContainer = lazy(() => import('./components/cart/CartContainer'));
 
 function App() {
+    const { pathname } = useLocation();
+
     return (
         <div className={s.app}>
             <NavContainer />
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Preloader pathname={pathname} />}>
                 <Routes>
                     <Route path="/*" element={<SectionContainer/>} />
-                    <Route path="/cart/*" element={<CartContainer/>} />
+                    <Route path="/cart/*" element={<CartContainer/>} preload={<CartPreloader />}/>
                 </Routes>
             </Suspense>
         </div>

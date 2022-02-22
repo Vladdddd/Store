@@ -3,17 +3,18 @@ import ItemOfCart from "./ItemOfCart";
 import s from './cart.module.scss';
 import { NavLink } from "react-router-dom";
 
-const Cart = ({ cartProducts, totalPrice }) => {
+const Cart = ({ cartProducts, totalPrice, onItemDelete, CartPreloader }) => {
     if (totalPrice === 0) {
         return <div>Your cart is empty</div>
     }
     return (
         <div className={s.checkout}>
+
             <div className={s.cart}>
                 <h1 className={s.cartCaption}>Your products</h1>
                 <div className={s.cartProducts}>
                     {cartProducts && cartProducts.map((item, index) => {
-                        return <ItemOfCart itemOfCart={item} key={index} index={index} length={cartProducts.length} />
+                        return <ItemOfCart itemOfCart={item} key={index} index={index} length={cartProducts.length} onItemDelete={onItemDelete}/>
                     })}
                 </div>
                 <NavLink to="/cart/checkout"><button className={s.submitPay}>Proceed to checkout</button></NavLink>

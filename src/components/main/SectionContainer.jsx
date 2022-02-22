@@ -7,6 +7,7 @@ import { setLocation } from '../../redux/user-reducer';
 import { storageChecker } from '../utils/storageChecker/storageChecker';
 import { Route, Routes } from "react-router";
 import Products from "./products/Products";
+import ProductsPreloader from "../common/preloaders/Products/ProductsPreloader";
 
 class SectionContainer extends React.Component {
 
@@ -72,6 +73,7 @@ class SectionContainer extends React.Component {
                         getProducts={this.getProducts}
                         getUserProducts={this.getUserProducts}
                         location={this.props.location}
+                        ProductsPreloader={ProductsPreloader}
                     />
                 </>} />
                 <Route path="/searched" element={<Products
@@ -90,6 +92,7 @@ class SectionContainer extends React.Component {
                     addedItems={this.props.addedItems} 
 
                     location={this.props.location}
+                    ProductsPreloader={ProductsPreloader}
                     />} />
             </Routes>
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import Products from './products/Products';
 
-const Main = ({ products, onPageChanged, currentPage, totalProductsCount, pageSize, onAddInCart, storageChecker, addedItems, setCurrentSection, getProducts, getUserProducts, location }) => {
+const Main = ({ products, onPageChanged, currentPage, totalProductsCount, pageSize, onAddInCart, storageChecker, addedItems, setCurrentSection, getProducts, getUserProducts, location, ProductsPreloader }) => {
 
     return (
         <>           
@@ -23,6 +23,7 @@ const Main = ({ products, onPageChanged, currentPage, totalProductsCount, pageSi
                     addedItems={addedItems} 
 
                     location={location}
+                    ProductsPreloader={ProductsPreloader}
                     />} />
 
                 <Route path="/location" element={<Products
@@ -41,6 +42,7 @@ const Main = ({ products, onPageChanged, currentPage, totalProductsCount, pageSi
                     addedItems={addedItems} 
 
                     location={location}
+                    ProductsPreloader={ProductsPreloader}
                     />} />
             </Routes>
         </>

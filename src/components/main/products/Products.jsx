@@ -3,7 +3,7 @@ import Paginator from '../../common/paginator/Paginator';
 import ItemOfProducts from './ItemOfProducts';
 import s from './products.module.scss';
 
-const Products = ({ products, onPageChanged, currentPage, totalProductsCount, pageSize, onAddInCart, storageChecker, addedItems, getProducts, currentSection, setCurrentSection, location }) => {
+const Products = ({ products, onPageChanged, currentPage, totalProductsCount, pageSize, onAddInCart, storageChecker, addedItems, getProducts, currentSection, setCurrentSection, location, ProductsPreloader }) => {
     useEffect(() => {
         getProducts();
         setCurrentSection(currentSection);
@@ -15,7 +15,7 @@ const Products = ({ products, onPageChanged, currentPage, totalProductsCount, pa
     }, [location])
 
     if(products.length === 0) {
-        return <div>Empty</div>//Сделать компонент с двумя вариантами - We dont have that, loading...
+        return <ProductsPreloader />
     }
 
     return (
