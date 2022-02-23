@@ -6,6 +6,7 @@ import { setWantedItems, getCartProduct, setCartProduct, clearOrderCart, deleteI
 import { Route, Routes } from 'react-router';
 import Checkout from './checkout/Checkout';
 import CartPreloader from '../common/preloaders/Cart/CartPreloader';
+import NotFound from '../notFound/NotFound';
 
 class CartContainer extends React.Component {
     componentDidMount() {
@@ -68,6 +69,7 @@ class CartContainer extends React.Component {
                     cartProducts={this.props.cartProducts}
                     clearOrderCart={this.props.clearOrderCart}
                     clearOrderProducts={this.props.clearOrderProducts} />} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
 
         </>
