@@ -8,6 +8,7 @@ import { storageChecker } from '../utils/storageChecker/storageChecker';
 import { Route, Routes } from "react-router";
 import Products from "./products/Products";
 import ProductsPreloader from "../common/preloaders/Products/ProductsPreloader";
+import NotFound from "../notFound/NotFound";
 
 class SectionContainer extends React.Component {
 
@@ -74,6 +75,7 @@ class SectionContainer extends React.Component {
                         getUserProducts={this.getUserProducts}
                         location={this.props.location}
                         ProductsPreloader={ProductsPreloader}
+                        NotFound={NotFound}
                     />
                 </>} />
                 <Route path="/searched" element={<Products
